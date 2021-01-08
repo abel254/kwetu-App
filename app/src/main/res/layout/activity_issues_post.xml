@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".issuesPost">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pTitleEt"
+            android:background="@drawable/editextstyle"
+            android:singleLine="true"
+            android:hint="@string/what_Issue"
+
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pImageIv"
+            android:background="@color/colorPrimary"
+            android:contentDescription="@string/issue_pic"
+            android:minHeight="200dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pDescriptionEt"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minHeight="120dp"
+            android:gravity="start"
+            android:background="@drawable/editextstyle"
+            android:hint="@string/issue_description"
+
+            />
+        <Button
+            android:id="@+id/pUploadBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_all"
+            android:text="@string/Upload"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+</ScrollView>

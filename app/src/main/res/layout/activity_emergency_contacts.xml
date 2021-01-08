@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".emergencyContacts">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/emergenciesLayout1"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_emergency_contacts_for_your_building"
+                    android:textSize="15sp"
+                    android:textColor="#000000"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/textHeaders1"/>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/textHeaders1"
+                    android:background="@drawable/grey_border_bottom"
+                    android:id="@+id/emergenciesLayout2"
+                    android:layout_marginTop="30dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_fire_department"
+                        android:contentDescription="@string/fire_department" />
+
+                    <EditText
+                        android:id="@+id/contact_fire"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:background="@null"
+                        android:hint="@string/fire_department"
+                        android:inputType="text"
+                        android:textColor="#000000" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/emergenciesLayout2"
+                    android:background="@drawable/grey_border_bottom"
+                    android:id="@+id/emergenciesLayout3">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_health"
+                        android:contentDescription="@string/ambulance_and_medical_services" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/medical_contact"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="40dp"
+                        android:background="@null"
+                        android:inputType="phone"
+                        android:hint="@string/ambulance_and_medical_services"
+                        android:textColor="#000000"
+                        android:layout_marginStart="40dp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/emergenciesLayout3"
+                    android:background="@drawable/grey_border_bottom"
+                    android:id="@+id/emergenciesLayout4">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_local_police"
+                        android:contentDescription="@string/anonymous_police_line" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/police_contact"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="40dp"
+                        android:background="@null"
+                        android:inputType="phone"
+                        android:hint="@string/anonymous_police_line"
+                        android:textColor="#000000"
+                        android:layout_marginStart="40dp"
+                        />
+
+                </RelativeLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emergenciesLayout4"
+                    android:id="@+id/update_emergencies"
+                    android:background="@drawable/button_all"
+                    android:text="@string/update"
+                    android:layout_marginTop="50dp"
+                    android:onClick="update"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+            </RelativeLayout>

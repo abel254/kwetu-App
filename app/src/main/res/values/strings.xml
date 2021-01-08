@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Kwetu</string>
+    <string name="title_activity_navigation">navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">User Profile</string>
+
+    <string name="menu_home">DashBoard</string>
+    <string name="menu_gallery">View Neighbors</string>
+    <string name="menu_slideshow">Private Chats</string>
+
+    <string name="t_name">Tenant Full Name</string>
+    <string name="t_email">Tenant Email</string>
+    <string name="t_house">House Number</string>
+    <string name="t_phone">Phone number</string>
+    <string name="t_pass">Password</string>
+    <string name="pass_c">Confirm Password</string>
+
+    <string name="a_name">Admin Name</string>
+    <string name="a_email">Your Email</string>
+    <string name="a_house">House Name</string>
+    <string name="a_id">ID Number</string>
+    <string name="a_reg">Admin Registration</string>
+
+    <string name="login_email">Enter your Email</string>
+    <string name="login_password">Enter your password</string>
+    <string name="Forgot_password">Forgot Password</string>
+
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="save">Save</string>
+    <string name="register_user">Registering User</string>
+    <string name="log_out">Log Out</string>
+
+    <string name="account_prof">Account profile</string>
+    <string name="change_pass">Change Password</string>
+    <string name="name">Name</string>
+    <string name="time">Time</string>
+    <string name="phone_pic">phone_pic</string>
+    <string name="lock_pic">lock_pic</string>
+    <string name="user_pic">user_pic</string>
+    <string name="profile_image">profile_image</string>
+    <string name="logging">Logging In. Please Wait...</string>
+    <string name="already">Already have an account? Log In instead.</string>
+
+
+    <string name="message">Messages</string>
+    <string name="issues">Issues</string>
+    <string name="emerge">Emergency</string>
+    <string name="ok">Okay</string>
+
+
+    <string name="Chats">Chat List</string>
+    <string name="type">Type Here</string>
+    <string name="delivered">delivered</string>
+
+    <string name="what_Issue">Enter Issue: Electricity/Plumbing/Security</string>
+    <string name="issue_pic">Picture of Issue</string>
+    <string name="issue_description">Describe your issue</string>
+    <string name="Upload">Upload</string>
+    <string name="title">Title</string>
+    <string name="comment">Comment</string>
+    <string name="new_issue">Create issue post</string>
+
+
+    <string name="report_crime_emergency">Report Crime</string>
+    <string name="fire_emergency">Fire Emergency</string>
+    <string name="health_emergency">Health Emergency</string>
+    <string name="whats_your_emergency">Whats your emergency?</string>
+    <string name="update_contacts">Update Contacts</string>
+    <string name="set_emergency_contacts_for_your_building">Set Emergency Contacts for Your Building</string>
+    <string name="update">update</string>
+    <string name="fire_department">Fire Department</string>
+    <string name="ambulance_and_medical_services">Ambulance and medical Services</string>
+    <string name="anonymous_police_line">Anonymous police line</string>
+    <string name="other_emergencies">Other Emergencies</string>
+
+</resources>
