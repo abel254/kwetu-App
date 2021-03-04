@@ -6,7 +6,7 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="marginTop">100dp</dimen>
-    <dimen name="margin">25dp</dimen>
+    <dimen name="margin">20dp</dimen>
     <dimen name="margin_Right">150dp</dimen>
     <dimen name="b">40dp</dimen>
     <dimen name="marginLeft">280dp</dimen>
@@ -15,4 +15,5 @@
     <dimen name="adminRegButton">115dp</dimen>
 
     <dimen name="dialog_registration">18sp</dimen>
+    <dimen name="Start_text">20sp</dimen>
 </resources>

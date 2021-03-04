@@ -5,6 +5,7 @@ public class Users {
     String tenant_name;
     String email;
     String house_number;
+    String landlord_phone_number;
     String phone_number;
     String password;
     String image;
@@ -13,10 +14,11 @@ public class Users {
     public Users() {
     }
 
-    public Users(String tenant_name, String email, String house_number, String phone_number, String password) {
+    public Users(String tenant_name, String email, String house_number, String landlord_phone_number, String phone_number, String password) {
         this.tenant_name = tenant_name;
         this.email = email;
         this.house_number = house_number;
+        this.landlord_phone_number = landlord_phone_number;
         this.phone_number = phone_number;
         this.password = password;
         this.image = image;
@@ -47,6 +49,11 @@ public class Users {
         this.house_number = house_number;
     }
 
+    public String getLandlord_phone_number() {
+        return landlord_phone_number;
+    }
+
+    public void setLandlord_phone_number(String landlord_phone_number) { this.landlord_phone_number = landlord_phone_number;}
     public String getPhone_number() {
         return phone_number;
     }

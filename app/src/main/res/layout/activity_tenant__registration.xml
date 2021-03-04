@@ -6,11 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Tenant_Registration">
 
+    <TextView
+        android:id="@+id/startTenantPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:gravity="center"
+        android:text="@string/new_tenant_registration"
+        android:textSize="@dimen/Start_text"
+        android:textStyle="bold" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/t_name_til"
-        android:layout_marginTop="@dimen/marginTop"
+        android:layout_marginTop="@dimen/marginLeftAlready"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin">
 
@@ -80,10 +90,31 @@
         android:hint="@string/t_phone" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lord_phone_til"
+        android:layout_below="@id/phone_til"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin">
+
+
+        <EditText
+            android:id="@+id/lord_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/t_house"
+            android:hint="@string/a_phone"
+            android:inputType="phone|number"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/phone_til"
+            android:layout_below="@id/lord_phone_til"
             android:layout_marginTop="@dimen/margin"
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginRight="@dimen/margin"

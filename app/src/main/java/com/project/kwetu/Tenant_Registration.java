@@ -28,6 +28,7 @@ public class Tenant_Registration extends AppCompatActivity {
     private EditText mTenantEmail;
     private EditText mHouseNumber;
     private EditText mPhoneNumber;
+    private EditText mPhoneNumber2;
     private EditText mPass1;
     private EditText mPass2;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -57,6 +58,13 @@ public class Tenant_Registration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validateHouse();
+            }
+        });
+        mPhoneNumber2 = findViewById(R.id.lord_phone_number);
+        mPhoneNumber2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validateLandLordsPhone();
             }
         });
         mPass1 = findViewById(R.id.password_tenant);
@@ -89,6 +97,8 @@ public class Tenant_Registration extends AppCompatActivity {
 
 
     }
+
+    
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -136,6 +146,24 @@ public class Tenant_Registration extends AppCompatActivity {
             return true;
         }
     }
+
+    private Boolean validateLandLordsPhone() {
+
+        String val = mPhoneNumber2.getText().toString();
+        String phonePattern = "[0-9._-]";
+        if(val.isEmpty()){
+            mPhoneNumber2.setError("Fill in the phone number");
+            return false;
+        }
+        else if (!val.matches(phonePattern)){
+            mPhoneNumber2.setError("Invalid phone number");
+            return false;
+        }
+        else{
+            mPhoneNumber2.setError(null);
+            return true;
+        }
+    }
     private Boolean validatePhone() {
         String val = mPhoneNumber.getText().toString();
         String phonePattern = "[0-9._-]";
@@ -180,7 +208,7 @@ public class Tenant_Registration extends AppCompatActivity {
         }
     }
     private void createUserWithEmailAndPassword() {
-        if (!validateName() | !validateEmail()  | !validateHouse()|  !validatePhone() | !validatePass() | !validatePass2()) {
+        if (!validateName() | !validateEmail()  | !validateHouse()| !validateLandLordsPhone()| !validatePhone() | !validatePass() | !validatePass2()) {
             return;
         }
 
@@ -215,9 +243,10 @@ public class Tenant_Registration extends AppCompatActivity {
         String tenant_name =  mTenantName.getText().toString();
         String email = mTenantEmail.getText().toString();
         String house_number = mHouseNumber.getText().toString();
+        String landlord_phone_number = mPhoneNumber2.getText().toString();
         String phone_number = mPhoneNumber.getText().toString();
         String password = mPass1.getText().toString();
-        Users helper = new Users(tenant_name, email,house_number,phone_number,password);
+        Users helper = new Users(tenant_name, email,house_number, landlord_phone_number,phone_number,password);
         myRef.push().setValue(helper);
 
     }

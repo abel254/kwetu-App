@@ -77,5 +77,7 @@
     <string name="ambulance_and_medical_services">Ambulance and medical Services</string>
     <string name="anonymous_police_line">Anonymous police line</string>
     <string name="other_emergencies">Other Emergencies</string>
+    <string name="new_tenant_registration">New Tenant Registration</string>
+    <string name="a_phone">Landlord number</string>
 
 </resources>
