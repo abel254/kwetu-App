@@ -4,92 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1EDED"
+    android:orientation="vertical"
     tools:context=".ChatActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar1"
+    <TextView
+        android:id="@+id/header_text"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        >
-
-        <ImageView
-            android:id="@+id/profile_c"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_face_1" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="20dp"
-            android:gravity="center"
-            android:layout_marginLeft="20dp">
-
-            <TextView
-                android:id="@+id/nameChat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="His Name"
-                android:textColor="@color/design_default_color_on_primary"
-                android:textSize="@dimen/dialog_registration"
-                android:textStyle="bold"
-
-                />
-
-            <TextView
-                android:id="@+id/statusUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Online"
-                android:textColor="@color/design_default_color_on_primary"
-
-
-                />
-        </LinearLayout>
-
-
-
-    </androidx.appcompat.widget.Toolbar>
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:text="Chat Forum"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chat_recyclerView"
+        android:id="@+id/chat_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar1"
-        android:layout_above="@id/chatLayout"/>
-    <LinearLayout
-        android:id="@+id/chatLayout"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/send_cv"
+        android:layout_marginBottom="7dp"
+        android:layout_below="@+id/header_text" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/send_cv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:background="?attr/colorButtonNormal"
-        android:orientation="horizontal">
+        android:layout_gravity="bottom"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="25dp">
 
-        <EditText
-            android:id="@+id/messageEt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@null"
-            android:inputType="textCapSentences|textMultiLine"
-            android:hint="@string/type"
-            android:padding="15dp"
-            />
+        <LinearLayout
+            android:id="@+id/chatLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorButtonNormal"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/sendBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@null"
-            android:src="@drawable/ic_send_1" />
+            <EditText
+                android:id="@+id/message_edt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/type"
+                android:inputType="textCapSentences|textMultiLine"
+                android:padding="15dp" />
 
-
-
-    </LinearLayout>
-
+            <ImageButton
+                android:id="@+id/send_button"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_send_1" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

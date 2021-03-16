@@ -4,158 +4,136 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Tenant_Registration">
+    tools:context=".AdminRegistration">
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
     <TextView
-        android:id="@+id/startTenantPage"
-        android:layout_width="match_parent"
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:gravity="center"
-        android:text="@string/new_tenant_registration"
-        android:textSize="@dimen/Start_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-light"
+        android:text="TENANT REGISTRATION"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
+        android:id="@+id/details_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/t_name_til"
-        android:layout_marginTop="@dimen/marginLeftAlready"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin">
-
-
-    <EditText
-        android:id="@+id/tenant_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="@string/t_name"
-        android:inputType="text"
-        android:hint="@string/t_name" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/t_email_til"
-        android:layout_below="@id/t_name_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin">
-
-    <EditText
-        android:id="@+id/tenant_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="@string/t_email"
-        android:inputType="textEmailAddress"
-        android:hint="@string/t_email" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/house_til"
-        android:layout_below="@id/t_email_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin">
-
-
-    <EditText
-        android:id="@+id/house_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="@string/t_house"
-        android:inputType="number"
-        android:hint="@string/t_house"
-
-        />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/phone_til"
-        android:layout_below="@id/house_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin">
-
-    <EditText
-        android:id="@+id/phone_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="@string/t_phone"
-        android:inputType="phone"
-        android:hint="@string/t_phone" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lord_phone_til"
-        android:layout_below="@id/phone_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin">
-
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
 
         <EditText
-            android:id="@+id/lord_phone_number"
+            android:id="@+id/tenant_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="@string/t_house"
-            android:hint="@string/a_phone"
-            android:inputType="phone|number"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="tenant full name"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp" />
 
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/tenant_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lord_phone_til"
-            android:layout_marginTop="@dimen/margin"
-            android:layout_marginLeft="@dimen/margin"
-            android:layout_marginRight="@dimen/margin"
-            android:id="@+id/passw_til">
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="email address"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp" />
 
-            <EditText
-                android:id="@+id/password_tenant"
-                android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/tenant_house_number"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="house number"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/tenant_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="phone number"
+            android:inputType="number"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/tenant_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="ID number"
+            android:inputType="number"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/tenant_password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/attachment_btn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autofillHints="@string/t_pass"
-                android:inputType="textPassword"
-                android:hint="@string/t_pass" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/passw_til"
-        android:id="@+id/pass_w_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin">
-            <EditText
-                android:id="@+id/password_tenant2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="@string/pass_c"
-                android:inputType="textPassword"
-                android:hint="@string/pass_c" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="Upload photo"
+                android:textAllCaps="false" />
 
 
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/attachment_pic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/tenant" />
     <Button
-        android:id="@+id/ten_reg_btn"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/pass_w_til"
-        android:layout_marginStart="@dimen/margin_Right"
-        android:layout_marginLeft="@dimen/margin_Right"
-        android:layout_marginTop="@dimen/margin"
-        android:background="@drawable/button_all"
-        android:text="@string/sign_up" />
+        android:id="@+id/btn_tenant_register"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorAccent"
+        android:text="add tenant" />
 
 </RelativeLayout>

@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/nav_dash"
-        android:name="com.project.kwetu.First_page"
+        android:name="com.project.kwetu.AdminMainPage"
         android:label="@string/menu_home"
-        tools:layout="@layout/activity_first_page" />
+        tools:layout="@layout/activity_admin_main_page" />
 
     <fragment
         android:id="@+id/nav_neighbors"
-        android:name="com.project.kwetu.viewTenants"
+        android:name="com.project.kwetu.ViewNeighbours"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/activity_view_tenants" />
+        tools:layout="@layout/activity_view_neighbours" />
 
     <fragment
         android:id="@+id/nav_pchats"

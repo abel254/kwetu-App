@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,24 +15,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".emergencyView"></activity>
+        <activity android:name=".TenantMainPage"></activity>
+        <activity android:name=".TenantLogin" />
+        <activity android:name=".BLogin" />
+        <activity android:name=".EmergencyView" />
         <activity android:name=".viewIssues" />
-        <activity android:name=".issuesPost" />
+        <activity android:name=".IssuesPost" />
         <activity android:name=".emergencyContacts" />
-        <activity
-            android:name=".ChatActivity"
-            android:theme="@style/AppThemeNo" />
-        <activity android:name=".viewTenants" />
+        <activity android:name=".ChatActivity"/>
+        <activity android:name=".ViewNeighbours" />
         <activity
             android:name=".navigation"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".picture_processing" />
-        <activity android:name=".user_profile" />
-        <activity android:name=".Admin_Registration" />
-        <activity android:name=".Tenant_Registration" />
-        <activity android:name=".Login" />
-        <activity android:name=".First_page" />
+        <activity android:name=".TenantProfile"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".AdminRegistration" />
+        <activity android:name=".TenantRegister" />
+        <activity android:name=".AdminLogin" />
+        <activity android:name=".AdminMainPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

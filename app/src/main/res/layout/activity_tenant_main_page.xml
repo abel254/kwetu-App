@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TenantMainPage">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="KWETU APP"
+        android:textSize="40sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="140dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/tenant"
+                    android:scaleType="centerCrop"
+                    android:layout_centerInParent="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorAccent"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#77000000"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/issues_cv"
+            android:layout_width="140dp"
+            android:layout_height="170dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            app:cardCornerRadius="10dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/issues"
+                    android:scaleType="centerCrop"
+                    android:layout_centerInParent="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Issues"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorAccent"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#77000000"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/neighbours_cv"
+            android:layout_width="140dp"
+            android:layout_height="170dp"
+            android:layout_below="@+id/card1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="10dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/neighbours"
+                    android:scaleType="centerCrop"
+                    android:layout_centerInParent="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Neighbours"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorAccent"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#77000000"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/emergency_cv"
+            android:layout_width="140dp"
+            android:layout_height="170dp"
+            android:layout_below="@+id/card1"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="10dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/emergency"
+                    android:scaleType="centerCrop"
+                    android:layout_centerInParent="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergencies"
+                    android:textStyle="bold"
+                    android:textSize="23sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorAccent"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#77000000"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/tenant_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@color/colorAccent"/>
+</RelativeLayout>

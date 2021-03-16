@@ -7,13 +7,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -23,7 +19,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,7 +28,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -48,7 +42,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 
-public class issuesPost extends AppCompatActivity {
+public class IssuesPost extends AppCompatActivity {
     
     FirebaseAuth mAuth;
     DatabaseReference userDbRef;
@@ -75,15 +69,12 @@ public class issuesPost extends AppCompatActivity {
     
     ProgressDialog pd;
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issues_post);
-        
-        actionBar = getSupportActionBar();
-        actionBar.setTitle("Add new post");
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+
         
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -93,7 +84,6 @@ public class issuesPost extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         checkUserStatus();
 
-        actionBar.setSubtitle(name);
         
         userDbRef = FirebaseDatabase.getInstance().getReference("Tenants");
         Query query = userDbRef.orderByChild("email").equalTo(email);
@@ -135,12 +125,12 @@ public class issuesPost extends AppCompatActivity {
                 String description = descriptionEt.getText().toString().trim();
                 
                 if(TextUtils.isEmpty(title)){
-                    Toast.makeText(issuesPost.this, "Enter Title", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(IssuesPost.this, "Enter Title", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(TextUtils.isEmpty(description)){
-                    Toast.makeText(issuesPost.this, "Enter description", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(IssuesPost.this, "Enter description", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 
@@ -196,7 +186,7 @@ public class issuesPost extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(Void aVoid) {
                                                 pd.dismiss();
-                                                Toast.makeText(issuesPost.this, "Issue uploaded", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(IssuesPost.this, "Issue uploaded", Toast.LENGTH_SHORT).show();
                                                 titleEt.setText("");
                                                 descriptionEt.setText("");
                                                 imageIv.setImageURI(null);
@@ -207,7 +197,7 @@ public class issuesPost extends AppCompatActivity {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
                                                 pd.dismiss();
-                                                Toast.makeText(issuesPost.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(IssuesPost.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                                             }
                                         });
                             }
@@ -219,7 +209,7 @@ public class issuesPost extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             pd.dismiss();
-                            Toast.makeText(issuesPost.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(IssuesPost.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         }
@@ -242,7 +232,7 @@ public class issuesPost extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void aVoid) {
                             pd.dismiss();
-                            Toast.makeText(issuesPost.this, "Issue uploaded", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(IssuesPost.this, "Issue uploaded", Toast.LENGTH_SHORT).show();
                             titleEt.setText("");
                             descriptionEt.setText("");
                             imageIv.setImageURI(null);
@@ -253,7 +243,7 @@ public class issuesPost extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             pd.dismiss();
-                            Toast.makeText(issuesPost.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(IssuesPost.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         }
@@ -357,7 +347,7 @@ public class issuesPost extends AppCompatActivity {
 
         }
         else{
-            startActivity(new Intent(this, First_page.class));
+            startActivity(new Intent(this, AdminMainPage.class));
             finish();
         }
     }

@@ -4,164 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin_Registration">
+    tools:context=".AdminRegistration">
 
-
-
-<com.google.android.material.textfield.TextInputLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/a_name_til"
-    android:layout_marginTop="@dimen/margin"
-    android:layout_marginLeft="@dimen/margin"
-    android:layout_marginRight="@dimen/margin">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/admin_name"
-                android:hint="@string/a_name"
-                android:autofillHints="@string/a_name"
-                android:inputType="text"
-                />
-</com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/a_email_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_below="@+id/a_name_til">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/admin_email"
-                android:hint="@string/a_email"
-                android:autofillHints="@string/a_email"
-                android:inputType="textEmailAddress"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/building_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_below="@id/a_email_til">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/building_name"
-                android:hint="@string/a_house"
-                android:inputType="text"
-                android:autofillHints="@string/a_house"
-
-                />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/id_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_below="@id/building_til">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/admin_id"
-                android:inputType="number"
-                android:hint="@string/a_id"
-                android:autofillHints="@string/a_id"
-                />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/a_phone_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_below="@id/id_til">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/phone_number_a"
-                android:inputType="phone"
-                android:hint="@string/t_phone"
-                android:autofillHints="@string/t_phone"
-
-                />
-    </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/pass_til"
-                android:layout_marginTop="@dimen/margin"
-                android:layout_marginLeft="@dimen/margin"
-                android:layout_marginRight="@dimen/margin"
-                android:layout_below="@id/a_phone_til"
-                app:passwordToggleEnabled="true">
-
-                <EditText
-                    android:id="@+id/password_admin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/t_pass"
-                    android:autofillHints="@string/t_pass"
-                    android:inputType="textPassword"
-
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/confirm_til"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_below="@id/pass_til"
-        app:passwordToggleEnabled="true">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/password_admin2"
-                    android:inputType="textPassword"
-                    android:autofillHints="@string/pass_c"
-                    android:hint="@string/pass_c"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
     <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-light"
+        android:text="ADMIN REGISTRATION"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/details_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text_already"
-        android:layout_below="@+id/confirm_til"
-        android:text="@string/already"
-        android:layout_marginTop="@dimen/marginAlready"
-        android:layout_marginLeft="@dimen/marginLeftAlready"
-        android:layout_marginRight="@dimen/margin"
-        android:textColor="#3F51B5"/>
+        android:layout_below="@+id/header"
+        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/admin_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="name"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp" />
 
-    <Button
-        android:id="@+id/ten_adm_btn"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_already"
-        android:layout_marginStart="@dimen/margin_Right"
-        android:layout_marginLeft="@dimen/margin_Right"
-        android:layout_marginTop="@dimen/margin"
-        android:background="@drawable/button_all"
-        android:text="@string/sign_up" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="email address"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp" />
 
+        <EditText
+            android:id="@+id/house_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="house name"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/id_number"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="ID number"
+            android:inputType="number"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/admin_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="phone number"
+            android:inputType="number"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/admin_password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_bg"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp" />
+
+        <Button
+            android:id="@+id/btn_admin_register"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorAccent"
+            android:text="register" />
+
+        <TextView
+            android:id="@+id/admin_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Already have an account? Back to Login"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
 
 </RelativeLayout>

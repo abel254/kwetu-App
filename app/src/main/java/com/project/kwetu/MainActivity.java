@@ -13,7 +13,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    FirebaseAuth mAuth;
 
 
     @Override
@@ -21,48 +20,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        int SPLASH_DISPLAY_LENGTH = 1000;
-        new Handler().postDelayed(new Runnable(){
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(SaveSharedPreference.getUserName(MainActivity.this).length() == 0)
-                {
-                    Intent intent = new Intent(MainActivity.this, Login.class);
-                    startActivity(intent);
-                }
-                else
-                {
-                    Intent intent = new Intent(MainActivity.this, First_page.class);
-                    startActivity(intent);
-                }
+                startActivity(new Intent(MainActivity.this, BLogin.class));
+                finish();
             }
-        }, SPLASH_DISPLAY_LENGTH);
-
-        mAuth = FirebaseAuth.getInstance();
-
-
-
+        }, 2000);
     }
-    private void checkUserStatus(){
-        FirebaseUser user  = mAuth.getCurrentUser();
-        if (user != null){
-            startActivity(new Intent(MainActivity.this, First_page.class));
-        }
-        else {
-            startActivity(new Intent(MainActivity.this, Login.class));
-            finish();
-        }
-
-    }
-    protected void onStart() {
-
-        checkUserStatus();
-
-        super.onStart();
-    }
-
-
-
-
-    }
+}

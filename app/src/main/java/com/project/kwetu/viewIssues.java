@@ -86,7 +86,7 @@ public class viewIssues extends AppCompatActivity {
     }
 
     private void newIssuePost() {
-        Intent intent = new Intent(this, issuesPost.class);
+        Intent intent = new Intent(this, IssuesPost.class);
         startActivity(intent);
     }
 
@@ -125,7 +125,7 @@ public class viewIssues extends AppCompatActivity {
 
         }
         else{
-            startActivity(new Intent(this, First_page.class));
+            startActivity(new Intent(this, AdminMainPage.class));
             finish();
         }
     }
